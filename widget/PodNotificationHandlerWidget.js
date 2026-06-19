@@ -402,16 +402,7 @@ sap.ui.define([
                     timestamp:  sTimestamp
                 };
                 PodContext.set("/PODNotifications", oNotification);
-                this.#oLog.info("Published /PODNotifications for event: " + sEventName);
-
-                // Debug: log the full PodContext model data so we can verify what's stored
-                try {
-                    const oCtxModel = PodContext.getModel ? PodContext.getModel() : null;
-                    const oCtxData  = oCtxModel ? oCtxModel.getData() : PodContext;
-                    console.log("[PodNotificationHandler] Full PodContext after notification:", JSON.parse(JSON.stringify(oCtxData)));
-                } catch (eDump) {
-                    console.log("[PodNotificationHandler] PodContext dump failed:", eDump.message);
-                }
+                this.#oLog.info("Published /PODNotifications — event: " + sEventName + " timestamp: " + sTimestamp);
             } catch (oError) {
                 this.#oLog.warn("Could not publish to PodContext /PODNotifications", oError);
             }
