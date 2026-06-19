@@ -1,0 +1,9 @@
+{
+  "widgets": [
+    {
+      "modulePath": "custom/pod2/podNotificationHandler/widget/PodNotificationHandlerWidget",
+      "type": "custom.pod2.podNotificationHandler.widget.PodNotificationHandlerWidget"
+    }
+  ],
+  "actions": []
+}
