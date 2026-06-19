@@ -1,6 +1,7 @@
-# POD Notification Handler Widget
+# POD Notification Handler Widget 📨
 
-A custom SAP Digital Manufacturing **POD 2.0** plugin that subscribes to real-time POD WebSocket notifications, displays a live message log, fires configurable **On Receive** action events, and publishes notification data into the shared POD context for consumption by other widgets.
+A custom SAP Digital Manufacturing **POD 2.0** plugin that can handle all your POD Notification needs.
+It subscribes to real-time POD WebSocket notifications, displays a live message log, fires configurable **On Receive** action events, and publishes notification data into the shared POD Context for consumption by other widgets.
 
 <img width="1389" height="553" alt="image" src="https://github.com/user-attachments/assets/cebbb829-d6d0-4f06-b08b-9a2ec2fa0df7" />
 
@@ -66,14 +67,13 @@ POD Notifications allow external systems (machines, IoT devices, MES integration
    - **Namespace**: `custom/pod2/podNotificationHandler`
    - **Source Code**: Browse and Select the ZIP file
 6. Click **Upload**
-7. The widget appears immediately in Manage PODs 2.0 under **Custom Widgets** on a POD edit mode
-4. Drag **POD Notification Handler** onto your POD canvas and configure the properties below
+<img width="1882" height="708" alt="image" src="https://github.com/user-attachments/assets/56283eb4-c758-46d9-9707-c727a4011763" />
 
+8. The widget appears immediately in Manage PODs 2.0 under **Custom Widgets** on a POD edit mode
+4. Drag **POD Notification Handler** onto your POD canvas and configure the properties below
 <img width="476" height="351" alt="image" src="https://github.com/user-attachments/assets/ad5859ca-1035-42fe-ae62-a0614dff3ac5" />
 
 > ⚠️ The ZIP must contain `extension.json` at its root. The release ZIP is pre-packaged correctly — don't re-zip.
-
-<img width="1882" height="708" alt="image" src="https://github.com/user-attachments/assets/56283eb4-c758-46d9-9707-c727a4011763" />
 
 ---
 
@@ -100,6 +100,7 @@ POD Notifications allow external systems (machines, IoT devices, MES integration
 **Example**: For event name `TEMPERATURE`, the event `On Receive: TEMPERATURE` appears. You can wire it to show a message box, navigate to a step, or execute any other standard POD action.
 
 <img width="1554" height="741" alt="image" src="https://github.com/user-attachments/assets/2f965116-d526-411d-81bb-b156c4a977f3" />
+<img width="1555" height="649" alt="image" src="https://github.com/user-attachments/assets/17fc6813-a9b0-46a3-91ac-c0ca5e873987" />
 
 ---
 
@@ -236,6 +237,7 @@ new Text({
         path: "pod>/PODNotifications/firstValue"
     }
 })
+```
 
 <img width="324" height="530" alt="image" src="https://github.com/user-attachments/assets/2e626104-cd1b-440c-88bc-2554041804a1" />
 <img width="1460" height="673" alt="image" src="https://github.com/user-attachments/assets/a47bd450-5bf4-41d2-8f40-67d03062244e" />
@@ -267,16 +269,6 @@ new Text({
 ---
 
 ## Technical Reference
-
-### Widget Metadata
-
-| Attribute | Value |
-|---|---|
-| Module path | `custom/pod2/podNotificationHandler/widget/PodNotificationHandlerWidget` |
-| Type | `custom.pod2.podNotificationHandler.widget.PodNotificationHandlerWidget` |
-| Base class | `sap.dm.dme.pod2.widget.Widget` |
-| Category | Custom Widgets |
-| Icon | `sap-icon://bell` |
 
 ### Key Dependencies
 
