@@ -2,6 +2,8 @@
 
 A custom SAP Digital Manufacturing **POD 2.0** plugin that subscribes to real-time POD WebSocket notifications, displays a live message log, fires configurable **On Receive** action events, and publishes notification data into the shared POD context for consumption by other widgets.
 
+<img width="1389" height="553" alt="image" src="https://github.com/user-attachments/assets/cebbb829-d6d0-4f06-b08b-9a2ec2fa0df7" />
+
 ---
 
 ## Table of Contents
@@ -20,7 +22,6 @@ A custom SAP Digital Manufacturing **POD 2.0** plugin that subscribes to real-ti
 - [Consuming PODNotifications in Other Widgets](#consuming-podnotifications-in-other-widgets)
 - [Event Data Reference](#event-data-reference)
 - [Languages Supported](#languages-supported)
-- [Known Limitations](#known-limitations)
 - [Technical Reference](#technical-reference)
 
 ---
@@ -68,7 +69,11 @@ POD Notifications allow external systems (machines, IoT devices, MES integration
 7. The widget appears immediately in Manage PODs 2.0 under **Custom Widgets** on a POD edit mode
 4. Drag **POD Notification Handler** onto your POD canvas and configure the properties below
 
+<img width="476" height="351" alt="image" src="https://github.com/user-attachments/assets/ad5859ca-1035-42fe-ae62-a0614dff3ac5" />
+
 > ⚠️ The ZIP must contain `extension.json` at its root. The release ZIP is pre-packaged correctly — don't re-zip.
+
+<img width="1882" height="708" alt="image" src="https://github.com/user-attachments/assets/56283eb4-c758-46d9-9707-c727a4011763" />
 
 ---
 
@@ -93,6 +98,8 @@ POD Notifications allow external systems (machines, IoT devices, MES integration
 4. Click the event to add actions — these execute every time a matching notification arrives.
 
 **Example**: For event name `TEMPERATURE`, the event `On Receive: TEMPERATURE` appears. You can wire it to show a message box, navigate to a step, or execute any other standard POD action.
+
+<img width="1554" height="741" alt="image" src="https://github.com/user-attachments/assets/2f965116-d526-411d-81bb-b156c4a977f3" />
 
 ---
 
@@ -129,6 +136,8 @@ The widget renders a scrollable list showing the last **200** received messages,
 - **Description**: `<date> <time>`
 
 A **Clear** button (trash icon) in the toolbar empties the log. The list uses `growing: true` with a threshold of 20, loading more rows on demand.
+
+<img width="1417" height="554" alt="image" src="https://github.com/user-attachments/assets/f40828ef-aabe-499d-a49d-dd62c654eeae" />
 
 ### On Receive Events
 
@@ -195,6 +204,9 @@ Use the SAP DM REST API endpoint `POST /notification/v1/send` with a payload lik
 
 ---
 
+<img width="1892" height="856" alt="image" src="https://github.com/user-attachments/assets/b0d5038e-f88c-4017-9102-77f098775322" />
+<img width="1176" height="519" alt="image" src="https://github.com/user-attachments/assets/e8afcbb2-0587-48b8-a846-5555ab17ea4e" />
+
 ## Consuming PODNotifications in Other Widgets
 
 ### Subscribe in another widget
@@ -206,7 +218,6 @@ PodContext.subscribe("/PODNotifications", (oNotification) => {
     console.log("First value:", oNotification.firstValue);
 }, this);
 ```
-
 Remember to unsubscribe in `onExit()`:
 
 ```javascript
@@ -225,11 +236,9 @@ new Text({
         path: "pod>/PODNotifications/firstValue"
     }
 })
-```
 
-> The model name `pod>` may vary depending on your POD runtime version. Check the PodContext model name in your environment.
-
----
+<img width="324" height="530" alt="image" src="https://github.com/user-attachments/assets/2e626104-cd1b-440c-88bc-2554041804a1" />
+<img width="1460" height="673" alt="image" src="https://github.com/user-attachments/assets/a47bd450-5bf4-41d2-8f40-67d03062244e" />
 
 ## Event Data Reference
 
